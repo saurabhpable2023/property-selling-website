@@ -1,0 +1,204 @@
+/* Common Utilities */
+.centered {
+  text-align: center;
+}
+
+/* Homepage designs */
+@media (min-width: 800px) {
+  /* src/Homepage.css */
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .homepage {
+    background-image: url("https://free4kwallpapers.com/uploads/originals/2020/10/13/digital-landscape-wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .overlay {
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ); /* Dark overlay to make text more readable */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content {
+    text-align: center;
+    color: white;
+  }
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  /* src/ReviewCard.css */
+  .review-card {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    max-width: 400px;
+  }
+
+  .avatar img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+  }
+
+  .review-content {
+    margin-left: 20px;
+  }
+
+  .user-name {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+  }
+
+  .review-text {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #555;
+  }
+
+  .rating .star {
+    color: #ccc;
+    font-size: 1.2em;
+    margin-right: 5px;
+  }
+
+  .rating .star.filled {
+    color: #f5b50a;
+  }
+
+  .cta-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #6bcc7b6b; /* Change to your desired color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .cta-button:hover {
+    background-color: #e04e4e; /* Change to your desired hover color */
+  }
+}
+
+.formContainer {
+  box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  background-color: whitesmoke;
+  min-height: 80vh;
+}
+
+/* Contact Us Form Designs */
+.contactUsForm {
+  background-color: whitesmoke; /* Does Nothing just there to fill the class */
+}
+
+/* Login Form Designs */
+.loginformContainer {
+  box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  background-color: whitesmoke;
+  min-height: 45vh;
+}
+
+/* ResetPassword Form Designs */
+.resetPasswordFormContainer {
+  box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  background-color: whitesmoke;
+  min-height: 45vh;
+}
+/* Product Card Designs */
+.product-container {
+  width: 200px;
+  border: 1px solid red;
+  display: flex;
+}
+
+/* Header Designs */
+@media (min-width: 800px) {
+  .header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: black;
+    color: white;
+  }
+  .site-title {
+    font-size: x-large;
+  }
+}
+
+/* Carousels Images */
+.CarouselImage {
+  height: 20%;
+  max-height: 500px;
+}
+
+/* Footer Designs */
+.footer {
+  position: relative;
+  margin-top: 20px;
+  background-color: #1c1b1d;
+  color: white;
+  font-weight: 600;
+  font-size: large;
+  width: 100%;
+}
+
+/* Removing Pre Styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* 
+#211F21
+#1C1B1D
+141314
+9F86FF
+*/
+
+/* Carousels Images */
+.CarouselImage{
+  height:20%;
+  max-height: 500px;
+}
