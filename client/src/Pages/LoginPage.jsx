@@ -4,6 +4,7 @@ import { GoEyeClosed } from "react-icons/go";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { login } from "../services/User";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 
@@ -25,7 +26,7 @@ function LoginPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Validate email and password
@@ -34,19 +35,33 @@ function LoginPage() {
 
     if (isValidEmail && isValidPassword) {
       // Proceed with login logic
-      console.log("Form is valid, perform login");
+      try {
+        console.log("Form is valid, perform login");
+        // Example: Call your login function here
+        const result = await login(data.email, data.password);
+        console.log(result);
+        
+          // Show success toast
+          toast.success("Login successful!");
+          navigate("/dashboard");
+    
+        // Clear form or perform other actions after successful login
+        setData({ email: "", password: "" });
+      } catch (error) {
+        console.log("Something went wrong")
+        console.log(error)
+        const { data } = error.response
+        if (data) {
+          Object.keys(data).forEach(key => {
+              toast.error(`${key}: ${data[key]}`);
+          });
+      } else if (data.message) {
+          toast.error(data.message);
+      } else {
+          toast.error('Failed to login');
+      }
 
-      // Example: Call your login function here
-
-      // Clear form or perform other actions after successful login
-      setData({
-        email: "",
-        password: "",
-      });
-
-      // Show success toast
-      toast.success("Login successful!");
-      navigate("/dashboard");
+      }
     }
   };
 
@@ -69,8 +84,8 @@ function LoginPage() {
 
   return (
     <div>
-      <Header />
-      <div className="container loginformContainer loginForm col-lg-6  mb-1 px-7 py-4">
+      <Header className="mb-4" />
+      <div className="container loginformContainer loginForm col-lg-6  mb-4 px-7 py-4 mt-4 ">
         <h2 className="centered mb-4 mt-6">Login here</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-label">Email</div>
@@ -131,9 +146,8 @@ function LoginPage() {
           </button>
         </form>
       </div>
-      <div style={{ position: "absolute", bottom: "0", width: "100%" }}>
-        <Footer />
-      </div>
+      <div style={{ position: "absolute", bottom: "0", width: "100%" }}></div>
+      <Footer />
     </div>
   );
 }

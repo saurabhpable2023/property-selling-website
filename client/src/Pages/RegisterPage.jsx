@@ -21,6 +21,10 @@ function RegisterPage() {
 
   const navigate = useNavigate()
 
+  const onCancel = () => {
+    navigate('/login')
+  }
+
   const RegisterUser = async () => {
     if (FirstName.length === 0) {
       toast.warning("Please Enter First Name");
@@ -49,15 +53,52 @@ function RegisterPage() {
         toast.warning("Password and Confirm Password are not Matching");
       }
       else {
-       // make the API call and receive the result
-      const result = await register(FirstName, LastName, Email, Username, PhoneNumber, City,State, Password)
-      console.log(result)
-      if (result['message'] === 'success') {
-        toast.success('successfully registered a user')
-        navigate('/login')
+       try {
+        // Make the API call and receive the result
+        const response = await register(FirstName, LastName, Email, Username, PhoneNumber, City, State, Password);
+    
+        // Debugging: Log the entire response
+        console.log('API Response:', response);
+        
+        // Check for HTTP status code 400 (Bad Request)
+         if (response.message === "success") {
+            toast.success('Successfully registered a user');
+            navigate('/login');
+        } else {
+            toast.error('Failed to register the user');
+        }
+    } catch (error) {
+      if (error.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          const { status, data } = error.response;
+          console.error('Error response:', error.response);
+
+          if (status === 400) {
+              // Handle 400 Bad Request errors
+              if (data) {
+                  Object.keys(data).forEach(key => {
+                      toast.error(`${key}: ${data[key]}`);
+                  });
+              } else if (data.message) {
+                  toast.error(data.message);
+              } else {
+                  toast.error('Failed to register due to validation errors.');
+              }
+          } else {
+              toast.error(`Registration failed with status code ${status}`);
+          }
+      } else if (error.request) {
+          // The request was made but no response was received
+          console.error('Error request:', error.request);
+          toast.error('No response received from server.');
       } else {
-        toast.error('Failed to register the user')
+          // Something happened in setting up the request that triggered an Error
+          console.error('General error:', error.message);
+          toast.error('An error occurred during registration.');
       }
+  }
+    
       }
     }
   }
@@ -178,7 +219,7 @@ function RegisterPage() {
                     <u><Link to='/login'>Login</Link></u>
                   </div>
                   <button className="btn btn-success ms-2 mb-3" onClick={RegisterUser}>Register</button>
-                  <button className="btn btn-danger mb-3 ms-4">Cancel</button>
+                  <button className="btn btn-danger mb-3 ms-4" onClick={onCancel}>Cancel</button>
                 </div>
               </div>
             </div>

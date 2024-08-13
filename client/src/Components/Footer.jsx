@@ -34,7 +34,7 @@ function Footer() {
           </p>
         </div>
       </div>
-
+      
       {/* Copyright Details Section */}
       <div className="row">
         <div className="col-10" style={{ fontSize: "medium" }}>
