@@ -1,0 +1,396 @@
+/* Common Utilities */
+.centered {
+  text-align: center;
+}
+
+/* The main content wrapper */
+.content-wrapper {
+  min-height: 100%; /* Ensure the content takes at least the full page height */
+  margin-bottom: -10rem; /* Adjust this value to be the same as the footer height */
+  padding-bottom: 10rem; /* Again, adjust to be the same as footer height */
+  box-sizing: border-box;
+}
+
+/* Homepage designs */
+@media (min-width: 800px) {
+  /* src/Homepage.css */
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* The main content wrapper */
+  .content-wrapper {
+    min-height: 100%; /* Ensure the content takes at least the full page height */
+    margin-bottom: -10rem; /* Adjust this value to be the same as the footer height */
+    padding-bottom: 10rem; /* Again, adjust to be the same as footer height */
+    box-sizing: border-box;
+  }
+
+  .homepage {
+    /* background-image: url("https://free4kwallpapers.com/uploads/originals/2020/10/13/digital-landscape-wallpaper.jpg"); */
+    background-image: url("../public/image2.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .overlay {
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ); /* Dark overlay to make text more readable */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content {
+    text-align: center;
+    color: white;
+  }
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  /* src/ReviewCard.css */
+  .review-card {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    max-width: 400px;
+  }
+
+  .avatar img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+  }
+
+  .review-content {
+    margin-left: 20px;
+  }
+
+  .user-name {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+  }
+
+  .review-text {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #555;
+  }
+
+  .rating .star {
+    color: #ccc;
+    font-size: 1.2em;
+    margin-right: 5px;
+  }
+
+  .rating .star.filled {
+    color: #f5b50a;
+  }
+
+  .cta-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #6bcc7b6b; /* Change to your desired color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .cta-button:hover {
+    background-color: #e04e4e; /* Change to your desired hover color */
+  }
+}
+
+.formContainer {
+  box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  background-color: whitesmoke;
+  min-height: 80vh;
+}
+
+/* Contact Us Form Designs */
+.contactUsForm {
+  background-color: whitesmoke; /* Does Nothing just there to fill the class */
+}
+
+/* Login Form Designs */
+.loginformContainer {
+  box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  background-color: whitesmoke;
+  min-height: 45vh;
+}
+
+/* ResetPassword Form Designs */
+.resetPasswordFormContainer {
+  box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 10px 10px 35px 5px rgba(0, 0, 0, 0.4);
+  background-color: whitesmoke;
+  min-height: 45vh;
+}
+/* Product Card Designs */
+.product-container {
+  width: 200px;
+  border: 1px solid red;
+  display: flex;
+}
+
+/* Header Designs */
+@media (min-width: 20px) {
+  .header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #003049;
+    color: white;
+  }
+  .site-title {
+    font-size: x-large;
+  }
+}
+
+/* Carousels Images */
+.CarouselImage {
+  height: 20%;
+  max-height: 500px;
+}
+
+/* Footer Designs */
+.footer {
+  position: relative;
+  padding: 0;
+  margin-bottom: 0;
+  width: 100%;
+  /* height: 10rem; Ensure this matches the negative margin and padding */
+  background-color: #003049;
+  color: white;
+  font-weight: 600;
+  font-size: large;
+}
+
+/* Removing Pre Styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* 
+#211F21
+#1C1B1D
+141314
+9F86FF
+*/
+
+/* Carousels Images */
+.CarouselImage {
+  height: 20%;
+  max-height: 500px;
+}
+
+/* Container holding the select and input */
+.search-container {
+  display: flex;
+  align-items: center;
+  max-width: 800px; /* Increased max-width to accommodate wider input */
+  margin: 0 auto; /* Center the search bar on the page */
+}
+
+/* Style for the select tag */
+.search-criteria {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 25px 0 0 25px; /* Rounded corners on the left */
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+  transition: border-color 0.3s ease-in-out;
+  -webkit-appearance: none; /* Remove default arrow in some browsers */
+  -moz-appearance: none; /* Remove default arrow in Firefox */
+  appearance: none; /* Modern browsers */
+  width: 150px; /* Adjust width as needed */
+}
+
+/* Style for the input tag */
+.search-input {
+  flex-grow: 2; /* Increased flex-grow to make the input wider */
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-left: none; /* Remove left border to connect with select */
+  border-radius: 0 25px 25px 0; /* Rounded corners on the right */
+  outline: none;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover and focus effects */
+.search-criteria:focus,
+.search-input:focus {
+  border-color: #4caf50; /* Customize this color to match your theme */
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5); /* Green shadow */
+}
+
+/* Placeholder styling for input */
+.search-input::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+/* Ensuring a consistent appearance for the dropdown arrow */
+.search-criteria::after {
+  content: "▼";
+  font-size: 12px;
+  color: #888;
+  position: absolute;
+  right: 15px;
+  pointer-events: none;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .search-criteria {
+    width: 100px; /* Adjust for smaller screens */
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .search-input {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+/* Style for the search button */
+.search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #4caf50; /* Match with the focus color */
+  border-radius: 25px;
+  background-color: #4caf50; /* Green background to match focus color */
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Hover and focus effects for the button */
+.search-button:hover,
+.search-button:focus {
+  background-color: #45a049; /* Slightly darker green for hover/focus */
+  border-color: #45a049; /* Match border color with background on hover/focus */
+}
+
+/* Disabled button state */
+.search-button:disabled {
+  background-color: #ccc; /* Light gray for disabled state */
+  border-color: #bbb; /* Lighter border color */
+  color: #666; /* Darker text color */
+  cursor: not-allowed; /* Show not-allowed cursor */
+}
+
+.searchContainer {
+  padding-top: 100px;
+  margin-bottom: 153px;
+}
+
+
+
+/* Property Tag Adding */
+.suggestions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #e0e0e0;
+}
+
+.tag-input-container {
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background-color: #e0e0e0;
+  border-radius: 3px;
+  padding: 5px 8px;
+  margin: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.tag-close-icon {
+  font-size: 16px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.tag-input {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  padding: 4px;
+  margin: 4px;
+}

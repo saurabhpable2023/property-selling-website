@@ -1,0 +1,16 @@
+/* src/pages/LogoutPage.css */
+
+.logout-container {
+    /* background: url('../../public/Background.jpg') no-repeat center center fixed; */
+    background-size: cover;
+}
+
+.card-img-top {
+    border-radius: 0;
+}
+
+.card {
+    border-radius: 1rem;
+    overflow: hidden;
+    text-align: center;
+}

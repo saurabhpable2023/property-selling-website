@@ -1,0 +1,15 @@
+/* src/pages/LoginPage.css */
+
+.login-container {
+    background: url('../Background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.card-img-top {
+    border-radius: 0;
+}
+
+.card {
+    border-radius: 1rem;
+    overflow: hidden;
+}
