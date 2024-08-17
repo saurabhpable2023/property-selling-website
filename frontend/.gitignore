@@ -11,6 +11,8 @@
 # production
 /build
 
+.metadata/
+
 # misc
 .DS_Store
 .env.local
