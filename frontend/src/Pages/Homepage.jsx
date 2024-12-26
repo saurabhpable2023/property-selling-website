@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
 function Homepage() {
-  const [Properities, SetProperities] = useState([]);
+  const [Properties, SetProperties] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(4);
 
@@ -35,7 +35,7 @@ function Homepage() {
   useEffect(() => {
     (async () => {
       const prop = await fetchData(currentPage);
-      SetProperities([...prop]);
+      SetProperties([...prop]);
     })();
   }, [currentPage]);
 
@@ -54,10 +54,10 @@ function Homepage() {
       <div className="container">
         <h1 className="centered">Properties</h1>
         <div className="row">
-          {Properities.length === 0 ? (
+          {Properties.length === 0 ? (
             <h1 className="centered mt-3">No Properties </h1>
           ) : (
-            Properities.map((property) => {
+            Properties.map((property) => {
               return (
                 <div className="col m-4">
                   <ProductCard
