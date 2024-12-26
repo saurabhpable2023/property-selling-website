@@ -7,9 +7,9 @@ export async function uploadImage(imageFile) {
   formData.append("file", imageFile);
 
   try {
-    const header = {
-      Authorization: `Bearer ${getCookie("token")}`,
-    };
+    // const header = {
+    //   Authorization: `Bearer ${getCookie("token")}`,
+    // };
     const response = await axios.put(
       `${config.url}/user/profile-picture`,
       formData,

@@ -29,16 +29,20 @@ export async function registerUser(
     city: city,
     state: state,
   };
+  console.log("test",body)
 
-  const url = process.env.REACT_APP_API_URL;
-  const response = await axios.post(`${url}/user/register`, body);
+  // const url = process.env.REACT_APP_API_URL;
+  const response = await axios.post(`${config.url}}/user/register`, body);
+  console.log("test",response)
+
   return response;
 }
 
 export async function loginUser(email, password) {
   let body = { username: email, password: password };
+  console.log("test",body)
   const response = await axios.post(
-    `${process.env.REACT_APP_API_URL}/user/login`,
+    `${config.url}/user/login`,
     body
   );
   return response;

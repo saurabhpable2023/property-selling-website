@@ -54,7 +54,7 @@ function Dashboard() {
               <div className="row mt-5">
                 <div className="col-sm-0 col-md-3 col-lg-3"></div>
                 <div className="col">
-                  <span className="tw-text-base tw-text-xl tw-font-medium tw-text-gray-700">
+                  <span className=" tw-text-xl tw-font-medium tw-text-gray-700">
                     Username:
                   </span>
                 </div>
@@ -69,7 +69,7 @@ function Dashboard() {
               <div className="row mt-2">
                 <div className="col-sm-0 col-md-3 col-lg-3"></div>
                 <div className="col">
-                  <span className="tw-text-base tw-text-xl tw-font-medium tw-text-gray-700">
+                  <span className=" tw-text-xl tw-font-medium tw-text-gray-700">
                     Name:
                   </span>
                 </div>
@@ -84,7 +84,7 @@ function Dashboard() {
               <div className="row mt-2">
                 <div className="col-sm-1 col-md-3 col-lg-3"></div>
                 <div className="col">
-                  <span className="tw-text-base tw-text-xl tw-font-medium tw-text-gray-700">
+                  <span className=" tw-text-xl tw-font-medium tw-text-gray-700">
                     Email:
                   </span>
                 </div>
@@ -99,7 +99,7 @@ function Dashboard() {
               <div className="row mt-2">
                 <div className="col-sm-1 col-md-3 col-lg-3"></div>
                 <div className="col">
-                  <span className="tw-text-base tw-text-xl tw-font-medium tw-text-gray-700">
+                  <span className=" tw-text-xl tw-font-medium tw-text-gray-700">
                     Phone:
                   </span>
                 </div>
