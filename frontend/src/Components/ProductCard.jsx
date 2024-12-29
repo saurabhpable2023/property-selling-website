@@ -43,7 +43,7 @@ function ProductCard({
   //   })();
   // }, []);
   function addToCartBtn() {
-    if (page.name == "homepage") {
+    if (page.name === "homepage") {
       return (
         <div>
           <Link
@@ -58,7 +58,7 @@ function ProductCard({
         </div>
       );
     }
-    if (page.name == "Edit-Prop") {
+    if (page.name === "Edit-Prop") {
       return (
         <div>
           <Link
@@ -76,7 +76,7 @@ function ProductCard({
         </div>
       );
     }
-    if (page.name == "wishlist") {
+    if (page.name === "wishlist") {
       return (
         <div>
           <Link

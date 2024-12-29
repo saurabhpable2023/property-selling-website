@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { changePassword } from "../services/methods";
-import { useCookies } from "react-cookie";
+// import { useCookies } from "react-cookie";
 
 function ResetPasswordPage() {
-  const [cookie] = useCookies();
+  // const [cookie] = useCookies();
   const [showOldPassword, setShowOldPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);

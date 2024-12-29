@@ -3,17 +3,17 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { deleteCookie, getUserDetails } from "../services/methods";
-import { GetSpecficPropertyUser } from "../services/property";
+import { GetSpecificPropertyUser } from "../services/property";
 import ImageUploadComponent from "../Components/ImageUploadComponent";
 
 function Dashboard() {
   const [data, setData] = useState("");
   const [Img, setImg] = useState("");
-  const [Properities, SetProperities] = useState([]);
+  const [Properties, SetProperties] = useState([]);
   const navigate = useNavigate();
 
   const fetchData = async () => {
-    const result = await GetSpecficPropertyUser(data.id);
+    const result = await GetSpecificPropertyUser(data.id);
     if (result.status === 200) {
       const propData = result.data;
       return propData;
@@ -29,7 +29,7 @@ function Dashboard() {
         setData(res.data.data);
         setImg(res.data.data.profilePic);
         fetchData().then((res) => {
-          SetProperities([...res]);
+          SetProperties([...res]);
         });
       } else {
         toast.error(res.status);
@@ -158,10 +158,10 @@ function Dashboard() {
               </a>
             </div>
             <div className="row">
-              {Properities.length === 0 ? (
+              {Properties.length === 0 ? (
                 <h1 className="centered mt-3">User Has No Added Properties</h1>
               ) : (
-                Properities.map((property) => {
+                Properties.map((property) => {
                   return (
                     <div className="col m-4">
                       <ProductCard

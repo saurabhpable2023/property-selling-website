@@ -32,7 +32,7 @@ export async function registerUser(
   console.log("test",body)
 
   // const url = process.env.REACT_APP_API_URL;
-  const response = await axios.post(`${config.url}}/user/register`, body);
+  const response = await axios.post(`${config.url}/user/register`, body);
   console.log("test",response)
 
   return response;
@@ -56,7 +56,7 @@ export async function changePassword(oldPassword, newPassword) {
   };
   console.log(getCookie("token"));
   const response = await axios.post(
-    `${process.env.REACT_APP_API_URL}/user/changePassword`,
+    `${config.url}/user/changePassword`,
     body,
     {
       headers: { Authorization: `Bearer ${getCookie("token")}` },
@@ -67,7 +67,7 @@ export async function changePassword(oldPassword, newPassword) {
 
 export async function getUserDetails() {
   const response = await axios.get(
-    `${process.env.REACT_APP_API_URL}/user/data`,
+    `${config.url}/user/data`,
     {
       headers: { Authorization: `Bearer ${getCookie("token")}` },
     }
@@ -78,7 +78,7 @@ export async function getUserDetails() {
 export async function loginAdmin(email, password) {
   let body = { username: email, password: password };
   const response = await axios.post(
-    `${process.env.REACT_APP_API_URL}/admin/login`,
+    `${config.url}/admin/login`,
     body
   );
   return response;
@@ -95,7 +95,7 @@ export function deleteCookie(name) {
 
 export async function getUserDetailsById(userId) {
   const response = await axios.get(
-    `${process.env.REACT_APP_API_URL}/user/get/${userId}`,
+    `${config.url}/user/get/${userId}`,
     {
       headers: { Authorization: `Bearer ${getCookie("token")}` },
     }

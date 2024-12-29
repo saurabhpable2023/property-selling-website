@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../Components/ProductCard";
-import Search from "../Components/Search";
 import { GetAllProperty } from "../services/property";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";

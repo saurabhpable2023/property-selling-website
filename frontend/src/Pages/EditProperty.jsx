@@ -3,9 +3,9 @@ import { toast } from "react-toastify";
 import {
   addPropertyImages,
   DeletePropertyImage,
-  EditSpecficPropertyId,
+  EditSpecificPropertyId,
   getPropertyImages,
-  GetSpecficPropertyId,
+  GetSpecificPropertyId,
 } from "../services/property";
 import { useNavigate } from "react-router-dom";
 import TagInput from "../Components/TagHandling";
@@ -36,12 +36,16 @@ function EditProperty() {
   const handleTagsChange = (tags) => {
     // const newTags = selectedTags;
     const newTags = new Set(tags);
-    tags.map((e) => {
-      newTags.add(e);
+    // tags.map((e) => {
+    //   newTags.add(e);
+    // });
+    tags.forEach(tag => {
+      newTags.add(tag)
     });
     setTagList([...newTags]);
     setSelectedTags([...newTags]);
   };
+  console.log(selectedTags)
 
   //Send to Backend to Get the Available Tags
   const availableTags = [
@@ -55,7 +59,7 @@ function EditProperty() {
 
   const fetchData = async () => {
     try {
-      const result = await GetSpecficPropertyId(propid); // Backend Integration
+      const result = await GetSpecificPropertyId(propid); // Backend Integration
       if (result.status === 200) {
         const data = result.data;
         return data;
@@ -126,10 +130,10 @@ function EditProperty() {
       for (let i = 0; i < files.files.length; i++) {
         Image.push(files.files[i]);
       }
-      const result = await EditSpecficPropertyId(propertyRequest, propid);
+      const result = await EditSpecificPropertyId(propertyRequest, propid);
       // const result = await EditSpecficPropertyId(id, Title, Address, City, State, District, Pincode, Type, Price, Area, Bedroom, Bathroom, Descpt)
       if (result.message === "Update Done") {
-        const ImgResult = await addPropertyImages(Image, propid);
+         await addPropertyImages(Image, propid);
         toast.success(result.message + " Successfully");
         navigate("/dashboard");
       } else {

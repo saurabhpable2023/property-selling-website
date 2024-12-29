@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import Rating from "@mui/material/Rating";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,15 +6,13 @@ import { toast } from "react-toastify";
 import {
   addPropertyWishlist,
   getPropertyImages,
-  GetSpecficPropertyId,
+  GetSpecificPropertyId,
 } from "../services/property";
-import { useNavigate, useParams } from "react-router-dom";
 
 function IndividualProperties() {
   const pathname = window.location.pathname;
   const id = pathname.split("/").pop();
 
-  const navigate = useNavigate();
   const [Title, setTitle] = useState("Testing Title");
   const [Descpt, setDescpt] = useState(
     "For the first time ever, celebrate the life and music of our friend and The Revolution’s legendary frontman," +
@@ -35,7 +32,7 @@ function IndividualProperties() {
   const [Price, setPrice] = useState("2000000");
   const [selectedTags, setSelectedTags] = useState([]);
   const [Images, setImages] = useState([]);
-  var images = [];
+
   const settings = {
     dots: true,
     infinite: false,
@@ -50,7 +47,7 @@ function IndividualProperties() {
   async function fetchData() {
     // const id = 9;
     try {
-      const result = await GetSpecficPropertyId(id); // Backend Integration
+      const result = await GetSpecificPropertyId(id); // Backend Integration
       if (result.status === 200) {
         const data = result.data;
         return data;
@@ -68,7 +65,7 @@ function IndividualProperties() {
   const fetchImage = async () => {
     // const id = 9;
     const result = await getPropertyImages(id); // Backend Integration
-    if (result.status == 200) {
+    if (result.status === 200) {
       const data = result.data;
       return data;
     } else {
@@ -148,7 +145,6 @@ function IndividualProperties() {
                   <center>
                     <img
                       src={"data:image/png;base64," + `${image.imageData}`}
-                      alt={"Test Image"}
                       className="CarouselImage"
                     />
                   </center>
