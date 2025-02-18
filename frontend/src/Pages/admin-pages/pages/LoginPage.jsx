@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import './LoginPage.css'; // Import custom CSS for additional styling
 import { loginAdmin } from '../../../services/methods';
 import { toast } from 'react-toastify';
-import { TbEye } from 'react-icons/tb';
-import { GoEyeClosed } from 'react-icons/go';
+// import { TbEye } from 'react-icons/tb';
+// import { GoEyeClosed } from 'react-icons/go';
 import { useCookies } from 'react-cookie';
 import loginImg from '../login.png'
 

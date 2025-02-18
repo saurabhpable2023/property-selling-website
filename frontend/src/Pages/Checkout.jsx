@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {
   getPropertyImages,
-  GetSpecficPropertyId,
+  GetSpecificPropertyId,
   sendEmail,
 } from "../services/property";
 import { toast } from "react-toastify";
@@ -27,7 +27,7 @@ function Checkout() {
   async function fetchData() {
     // const id = 9;
     try {
-      const result = await GetSpecficPropertyId(id); // Backend Integration
+      const result = await GetSpecificPropertyId(id); // Backend Integration
       if (result.status === 200) {
         const data = result.data;
         return data;
@@ -45,7 +45,7 @@ function Checkout() {
   const fetchImage = async () => {
     // const id = 9;
     const result = await getPropertyImages(id); // Backend Integration
-    if (result.status == 200) {
+    if (result.status === 200) {
       const data = result.data;
       return data;
     } else {
@@ -70,7 +70,7 @@ function Checkout() {
           setPrice(price);
           setDescpt(description);
           setOwnerName(owner);
-          if (id == userid) {
+          if (id === userid) {
             toast.warning("You Own This Property");
             navigate("/");
           }

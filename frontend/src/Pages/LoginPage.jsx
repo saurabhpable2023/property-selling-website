@@ -69,7 +69,7 @@ function LoginPage() {
       className="content-wrapper"
       style={{ marginBottom: "0px", marginTop: "10px" }}
     >
-      <div className="container loginformContainer loginForm col-lg-6  mb-1 px-7 py-4">
+      <div className="container loginFormContainer loginForm col-lg-6  mb-1 px-7 py-4">
         <h2 className="centered mb-4 mt-6">Login here</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-label">Username</div>

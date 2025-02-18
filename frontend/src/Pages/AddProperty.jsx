@@ -11,13 +11,13 @@ import { useNavigate } from "react-router-dom";
 function AddProperty() {
   const [TagList, setTagList] = useState([]);
   const [title, setTitle] = useState("");
-  const [Descpt, setDescpt] = useState("");
+  const [description, setDescription] = useState("");
   const [AddressLine1, setAddressLine1] = useState("");
   const [AddressLine2, setAddressLine2] = useState("");
   const [State, setState] = useState("");
   const [District, setDistrict] = useState("");
   const [City, setCity] = useState("");
-  const [Pincode, setPincode] = useState("");
+  const [pinCode, setPinCode] = useState("");
   const [Type, setType] = useState("");
   const [Area, setArea] = useState("");
   const [Bedroom, setBedroom] = useState("");
@@ -32,8 +32,11 @@ function AddProperty() {
     // const newTags = selectedTags;
     const newTags = new Set(tags);
     console.log(tags + "-----" + selectedTags + "-----" + newTags);
-    tags.map((e) => {
-      newTags.add(e);
+    // tags.map((e) => {
+    //   newTags.add(e);
+    // });
+    tags.forEach(tag=> {
+      newTags.add(tag)
     });
     setTagList([...newTags]);
     setSelectedTags([...newTags]);
@@ -43,7 +46,7 @@ function AddProperty() {
   const fetchData = async () => {
     try {
       const result = await GetAllTags(); // Backend Integration
-      if (result.status == "Success") {
+      if (result.status === "Success") {
         const data = result.data;
         return data;
       } else {
@@ -64,13 +67,13 @@ function AddProperty() {
     }));
     if (title.length === 0) {
       toast.warning("Please Enter Property Title");
-    } else if (Descpt.length === 0) {
+    } else if (description.length === 0) {
       toast.warning("Please Enter Property Description");
     } else if (AddressLine1.length === 0) {
       toast.warning("Please Enter Property Address Line 1");
     } else if (AddressLine2.length === 0) {
       toast.warning("Please Enter Property Address Line 2");
-    } else if (Descpt.length === 0) {
+    } else if (description.length === 0) {
       toast.warning("Please Enter Property Description");
     } else if (State.length === 0) {
       toast.warning("Please Enter Property State");
@@ -78,7 +81,7 @@ function AddProperty() {
       toast.warning("Please Enter Property District");
     } else if (City.length === 0) {
       toast.warning("Please Enter Property City");
-    } else if (Pincode.length === 0) {
+    } else if (pinCode.length === 0) {
       toast.warning("Please Enter Property Pincode");
     } else if (Area.length === 0) {
       toast.warning("Please Enter Property Area");
@@ -98,7 +101,7 @@ function AddProperty() {
       // Backend Integration Code
       const propertyRequest = {
         title: title,
-        description: Descpt,
+        description: description,
         price: Price,
         propertyArea: Area,
         propertyType: Type,
@@ -110,7 +113,7 @@ function AddProperty() {
           city: City,
           state: State,
           district: District,
-          pincode: Pincode,
+          pinCode: pinCode,
         },
         tags: tagsDTORequest,
       };
@@ -126,8 +129,8 @@ function AddProperty() {
       if (result.status === 200) {
         const data = result.data;
         toast.success(`Property Added`);
-        const propid = data.id;
-        const ImgResult = await addPropertyImages(Image, propid);
+        const propId = data.id;
+        const ImgResult = await addPropertyImages(Image, propId);
         if (ImgResult.status === 200) {
           toast.success(`Images Added`);
           navigate("/dashboard");
@@ -144,9 +147,12 @@ function AddProperty() {
     (async () => {
       const prop = await fetchData();
       const newTags = new Set([]);
-      prop.map((e) => {
-        newTags.add(e.tagName);
-      });
+      // prop.map((e) => {
+      //   newTags.add(e.tagName);
+      // });
+      prop.forEach((e)=>{
+        newTags.add(e);
+      })
       setAvailableTags([...newTags]);
     })();
   }, []);
@@ -188,7 +194,7 @@ function AddProperty() {
                       placeholder="Property Description"
                       name="PropDescript"
                       onChange={(e) => {
-                        setDescpt(e.target.value);
+                        setDescription(e.target.value);
                       }}
                       className="form-control"
                       rows={5}
@@ -289,7 +295,7 @@ function AddProperty() {
                       placeholder="Enter Pincode"
                       name="Pincode"
                       onChange={(e) => {
-                        setPincode(e.target.value);
+                        setPinCode(e.target.value);
                       }}
                       className="form-control"
                     />

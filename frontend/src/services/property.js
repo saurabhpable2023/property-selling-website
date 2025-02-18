@@ -38,7 +38,7 @@ export async function GetSpecficProperty(title) {
   }
 }
 
-export async function GetSpecficPropertyUser(userID) {
+export async function GetSpecificPropertyUser(userID) {
   // body parameters
   // make API call
   try {
@@ -53,7 +53,7 @@ export async function GetSpecficPropertyUser(userID) {
   }
 }
 
-export async function GetSpecficPropertyId(propertyID) {
+export async function GetSpecificPropertyId(propertyID) {
   // make API call
   try {
     const response = await axios.get(`${config.url}/Property/${propertyID}`, {
@@ -66,7 +66,7 @@ export async function GetSpecficPropertyId(propertyID) {
   }
 }
 
-export async function EditSpecficPropertyId(body, PropId) {
+export async function EditSpecificPropertyId(body, PropId) {
   // make API call
   try {
     const response = await axios.put(
@@ -100,7 +100,7 @@ export async function addProperty(body) {
 export async function addPropertyImages(Images, propertyID) {
   // body parameters
   var data = new FormData();
-  Images.map((image) => {
+  Images.forEach((image) => {
     data.append("imageLink", image, image.name);
   });
   // make API call
