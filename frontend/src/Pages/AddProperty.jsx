@@ -117,12 +117,12 @@ function AddProperty() {
         },
         tags: tagsDTORequest,
       };
-      Image = [];
+      const uploadedImages = [];
       const files = document.getElementById("formFileMultiple");
       for (let i = 0; i < files.files.length; i++) {
-        Image.push(files.files[i]);
+        uploadedImages.push(files.files[i]);
       }
-      setImages(Image);
+      setImages(uploadedImages);
 
       const result = await addProperty(propertyRequest);
       console.log(result);
@@ -252,7 +252,7 @@ function AddProperty() {
                       }}
                     >
                       <option value="default">Select State</option>
-                      <option value="Maharastra">Maharastra</option>
+                      <option value="Maharashtra">Maharashtra</option>
                       <option value="Goa">Goa</option>
                       <option value="Karnataka">Karnataka</option>
                     </select>
